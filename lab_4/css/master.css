@@ -1,0 +1,23 @@
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #f2f2f2;
+}
+.failed {
+    background-color: #ffcccc;
+}
+.success {
+    background-color: #ccffcc;
+}
+.error {
+    color: red;
+    font-size: 12px;
+}

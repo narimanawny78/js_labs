@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form Demo</title>
+    <link rel="stylesheet" href="css/master.css">
+</head>
+<body>
+    <h3>Student Form Demo</h3>
+    
+    <!-- Form -->
+    <form id="studentForm" onsubmit="return addStudent(event)">
+        <label>Department:</label>
+        <input type="radio" name="department" value="SD"> SD
+        <input type="radio" name="department" value="OS"> OS
+        <input type="radio" name="department" value="EL" checked> EL
+        <br><br>
+        
+        <label>Student Name:</label>
+        <input type="text" id="studentName" name="studentName" value="mona">
+        <span id="nameError" class="error"></span>
+        <br><br>
+
+        <label>Student Grade:</label>
+        <input type="text" id="studentGrade" name="studentGrade" value="50">
+        <span id="gradeError" class="error"></span>
+        <br><br>
+
+        <button type="submit">Add</button>
+        <br><br>
+
+        <!-- Sort Dropdown -->
+        <label>Sort:</label>
+        <select id="sortOption" onchange="sortTable()">
+            <option value="name">Name</option>
+            <option value="grade">Grade</option>
+        </select>
+        <br><br>
+
+        <!-- Filter Dropdown -->
+        <label>Filter:</label>
+        <select id="filterOption" onchange="filterTable()">
+            <option value="ALL">ALL</option>
+            <option value="failed">Failed (Grade < 60)</option>
+            <option value="success">Success (Grade >= 60)</option>
+        </select>
+    </form>
+
+    <!-- Table -->
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Grade</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="studentTableBody">
+            <tr>
+                <td class="failed">Eman</td>
+                <td class="failed">0</td>
+                <td><button onclick="deleteRow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td class="success">Ahmed</td>
+                <td class="success">90</td>
+                <td><button onclick="deleteRow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td class="failed">Mona</td>
+                <td class="failed">50</td>
+                <td><button onclick="deleteRow(this)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+   <script src="js/Script.js" ></script>
+</body>
+</html>
